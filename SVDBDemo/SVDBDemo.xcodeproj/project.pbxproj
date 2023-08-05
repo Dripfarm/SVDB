@@ -11,8 +11,8 @@
 		177872D32A7DF0FE00D52548 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177872D22A7DF0FE00D52548 /* ContentView.swift */; };
 		177872D52A7DF10000D52548 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 177872D42A7DF10000D52548 /* Assets.xcassets */; };
 		177872D82A7DF10000D52548 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 177872D72A7DF10000D52548 /* Preview Assets.xcassets */; };
-		177872E02A7DF1CE00D52548 /* SVDB in Frameworks */ = {isa = PBXBuildFile; productRef = 177872DF2A7DF1CE00D52548 /* SVDB */; };
 		17C2FE882A7DF61B00A3D246 /* WORDS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C2FE872A7DF61B00A3D246 /* WORDS.swift */; };
+		17C2FE8B2A7DF79300A3D246 /* SVDB in Frameworks */ = {isa = PBXBuildFile; productRef = 17C2FE8A2A7DF79300A3D246 /* SVDB */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,7 +29,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				177872E02A7DF1CE00D52548 /* SVDB in Frameworks */,
+				17C2FE8B2A7DF79300A3D246 /* SVDB in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -89,7 +89,7 @@
 			);
 			name = SVDBDemo;
 			packageProductDependencies = (
-				177872DF2A7DF1CE00D52548 /* SVDB */,
+				17C2FE8A2A7DF79300A3D246 /* SVDB */,
 			);
 			productName = SVDBDemo;
 			productReference = 177872CD2A7DF0FE00D52548 /* SVDBDemo.app */;
@@ -120,7 +120,7 @@
 			);
 			mainGroup = 177872C42A7DF0FE00D52548;
 			packageReferences = (
-				177872DE2A7DF1CE00D52548 /* XCRemoteSwiftPackageReference "SVDB" */,
+				17C2FE892A7DF79300A3D246 /* XCRemoteSwiftPackageReference "SVDB" */,
 			);
 			productRefGroup = 177872CE2A7DF0FE00D52548 /* Products */;
 			projectDirPath = "";
@@ -353,7 +353,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		177872DE2A7DF1CE00D52548 /* XCRemoteSwiftPackageReference "SVDB" */ = {
+		17C2FE892A7DF79300A3D246 /* XCRemoteSwiftPackageReference "SVDB" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "git@github.com:Dripfarm/SVDB.git";
 			requirement = {
@@ -364,9 +364,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		177872DF2A7DF1CE00D52548 /* SVDB */ = {
+		17C2FE8A2A7DF79300A3D246 /* SVDB */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 177872DE2A7DF1CE00D52548 /* XCRemoteSwiftPackageReference "SVDB" */;
+			package = 17C2FE892A7DF79300A3D246 /* XCRemoteSwiftPackageReference "SVDB" */;
 			productName = SVDB;
 		};
 /* End XCSwiftPackageProductDependency section */

@@ -52,3 +52,20 @@ let wordEmedding = embedding?.vector(for: "cat") //returns double array
 ```
 let animalCollection = SVDB.shared.collection("animals")
 SVDB.shared.
+
+```
+
+### 3. Search
+
+```
+let dogEmedding = embedding?.vector(for: "dog")
+
+let results = animalCollection.search(query: dogEmedding)
+```
+
+## Demo
+
+Check out the demo [Demo](https://github.com/Dripfarm/SVDB/tree/master/SVDBDemo)
+
+## Todo
+Not sure. I want to make it easier to add documents and take care of the embeddings for you. Any suggestions?
