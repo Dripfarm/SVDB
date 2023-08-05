@@ -27,6 +27,8 @@ let document = "cat"
 
 ChatGPT:
 
+I find [This Swift OpenAI package to be the best](https://github.com/MacPaw/OpenAI)
+
 ```
 import OpenAI
 
