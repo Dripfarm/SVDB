@@ -25,7 +25,7 @@ dependencies: [
 let document = "cat"
 ```
 
-ChatGPT:
+**ChatGPT:**
 
 I find [This Swift OpenAI package to be the best](https://github.com/MacPaw/OpenAI)
 
@@ -43,7 +43,7 @@ func embed(text: String) async -> [Double]? {
 let wordEmbedding = embed(text: document)
 ```
 
-NLEmbeddings
+**NLEmbeddings**
 
 ```
 import NaturalLanguage
