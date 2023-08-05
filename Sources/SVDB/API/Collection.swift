@@ -10,6 +10,7 @@ import CoreML
 import NaturalLanguage
 
 @available(macOS 10.15, *)
+@available(iOS 13.0, *)
 public class Collection {
     private var documents: [Document] = []
     private let name: String

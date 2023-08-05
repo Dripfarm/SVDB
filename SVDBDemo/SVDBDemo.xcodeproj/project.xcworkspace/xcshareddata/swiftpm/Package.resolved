@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "svdb",
+      "kind" : "remoteSourceControl",
+      "location" : "git@github.com:Dripfarm/SVDB.git",
+      "state" : {
+        "revision" : "cd44e9db1786b811277db1b151825e714b1995ac",
+        "version" : "1.0.1"
+      }
+    }
+  ],
+  "version" : 2
+}
