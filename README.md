@@ -21,6 +21,10 @@ dependencies: [
 ## Usage
 
 ### 1. Create Embeddings
+```
+let document = "cat"
+```
+
 ChatGPT:
 
 ```
@@ -34,7 +38,7 @@ func embed(text: String) async -> [Double]? {
 	return result.data.first?.embedding
 }
 
-let wordEmbedding = embed(text: "cat")
+let wordEmbedding = embed(text: document)
 ```
 
 NLEmbeddings
@@ -44,14 +48,15 @@ import NaturalLanguage
 
 let embedding: NLEmbedding? = NLEmbedding.wordEmbedding(for: .english)
 
-let wordEmedding = embedding?.vector(for: "cat") //returns double array
+let wordEmedding = embedding?.vector(for: document) //returns double array
 ```
 
 ### 2. Add Documents
 
 ```
 let animalCollection = SVDB.shared.collection("animals")
-SVDB.shared.
+
+SVDB.shared.addDocument(text: document, embedding: wordEmbedding)
 
 ```
 
