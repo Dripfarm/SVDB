@@ -12,7 +12,7 @@ import NaturalLanguage
 @available(macOS 10.15, *)
 @available(iOS 13.0, *)
 public class Collection {
-    private var documents: [Document] = []
+    private var documents: [UUID: Document] = [:]
     private let name: String
 
     init(name: String) {
@@ -26,22 +26,18 @@ public class Collection {
             embedding: embedding
         )
 
-        documents.append(document)
+        documents[document.id] = document
         save()
     }
 
     public func addDocuments(_ docs: [Document]) {
-        documents.append(contentsOf: docs)
+        docs.forEach { documents[$0.id] = $0 }
         save()
     }
 
     public func removeDocument(byId id: UUID) {
-        if let index = documents.firstIndex(where: { $0.id == id }) {
-            documents.remove(at: index)
-            save()
-        } else {
-            print("No document found with id: \(id)")
-        }
+        documents[id] = nil
+        save()
     }
 
     public func search(
@@ -52,7 +48,7 @@ public class Collection {
         let queryMagnitude = sqrt(query.reduce(0) { $0 + $1 * $1 })
 
         var similarities: [SearchResult] = []
-        for document in documents {
+        for document in documents.values {
             let id = document.id
             let text = document.text
             let vector = document.embedding
@@ -91,7 +87,7 @@ public class Collection {
         // Check if file exists
         guard FileManager.default.fileExists(atPath: fileURL.path) else {
             print("File does not exist for collection \(name), initializing with empty documents.")
-            documents = []
+            documents = [:]
             return
         }
 
@@ -99,7 +95,7 @@ public class Collection {
             let compressedData = try Data(contentsOf: fileURL)
 
             let decompressedData = try (compressedData as NSData).decompressed(using: .zlib)
-            documents = try JSONDecoder().decode([Document].self, from: decompressedData as Data)
+            documents = try JSONDecoder().decode([UUID: Document].self, from: decompressedData as Data)
 
             print("Successfully loaded collection: \(name)")
         } catch {
